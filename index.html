@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Dear❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+
+    <!-- PAGE 1 -->
+    <section id="page1" class="page active">
+
+        <div class="birthday-card">
+
+
+            <h1>Happy Birthday Nisha❤️ </h1>
+
+            <p>
+                Today is a very special day...
+                because someone very special was born today. ✨
+            </p>
+
+            <p class="wish">
+                May your life always be filled with happiness,
+                beautiful smiles and lots of love. 💕
+            </p>
+
+            <button onclick="openMessage()">
+                💌 I Have Something For You
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 2 -->
+    <section id="page2" class="page">
+
+        <div class="proposal-card">
+
+            <div class="heart">❤️</div>
+
+            <h1>Wait... There's More! 🥰</h1>
+
+            <p class="message">
+                I've been wanting to tell you something for a while...
+            </p>
+
+            <h2>
+                You'll be my Forever? 💖
+            </h2>
+
+            <p class="small-text">
+                (Please choose carefully 😜)
+            </p>
+
+            <div class="buttons">
+
+                <button class="yes" onclick="yesClicked()">
+                    YES ❤️
+                </button>
+
+                <button class="no" id="noButton">
+                    NO 😜
+                </button>
+
+            </div>
+
+            <div id="result"></div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        function openMessage() {
+            document.getElementById("page1").classList.remove("active");
+            document.getElementById("page2").classList.add("active");
+        }
+
+
+        const noButton = document.getElementById("noButton");
+
+        function moveNoButton() {
+
+            const maxX = window.innerWidth - noButton.offsetWidth - 20;
+            const maxY = window.innerHeight - noButton.offsetHeight - 20;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            noButton.style.position = "fixed";
+            noButton.style.left = randomX + "px";
+            noButton.style.top = randomY + "px";
+        }
+
+        noButton.addEventListener("mouseover", moveNoButton);
+        noButton.addEventListener("touchstart", moveNoButton);
+
+
+        function yesClicked() {
+
+            document.querySelector(".proposal-card").innerHTML = `
+                <div class="heart big-heart">❤️</div>
+
+                <h1>Thanks For Chooshing Me ❤️</h1>
+
+                <h2>You Just Made Me The Happiest Person! 💕</h2>
+
+                <p>
+                    I promise to always make you smile,
+                    support you and create beautiful memories with you. ✨
+                </p>
+
+                <div class="love-message">
+                    Happy Birthday once again! my Future........ 🎂❤️
+                </div>
+
+                <div class="fireworks">
+                    🎉 🎊 💖 🎉 🎊
+                </div>
+            `;
+        }
+
+    </script>
+
+</body>
+</html>
